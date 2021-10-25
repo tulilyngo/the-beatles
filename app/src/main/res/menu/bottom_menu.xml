@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/mainFragment"
-        android:icon="@drawable/ic_fas_home"
+        android:icon="@drawable/twotone_home_black_24dp"
         android:title="Home"/>
     <item
         android:id="@+id/albumFragment"
-        android:icon="@drawable/ic_fas_music"
+        android:icon="@drawable/twotone_music_note_black_24dp"
         android:title="Albums"/>
     <item
         android:id="@+id/searchFragment"
-        android:icon="@drawable/ic_fas_search"
+        android:icon="@drawable/twotone_search_black_24dp"
         android:title="Search"/>
 </menu>
