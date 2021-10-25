@@ -6,9 +6,9 @@
         <entry key="app/src/main/res/drawable/ic_fas_home.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/drawable/ic_fas_music.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/drawable/ic_fas_search.xml" value="0.24166666666666667" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.11195542046605876" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.13949275362318841" />
         <entry key="app/src/main/res/layout/fragment_album.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.13949275362318841" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.335" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.1425925925925926" />
       </map>

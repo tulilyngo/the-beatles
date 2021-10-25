@@ -16,8 +16,10 @@ class MainActivity : AppCompatActivity() {
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {
+    supportActionBar?.hide()
+
     super.onCreate(savedInstanceState)
-    instance = this // have to move here
+    instance = this
     setContentView(R.layout.activity_main)
 
     var bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
