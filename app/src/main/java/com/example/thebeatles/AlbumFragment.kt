@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 
 class AlbumFragment : Fragment() {
@@ -36,12 +38,12 @@ class AlbumFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+    MainActivity.getInstance().supportActionBar?.title = "Album"
 
     layoutManager = LinearLayoutManager(MainActivity.getInstance())
     var recycler_view = MainActivity.getInstance().findViewById<RecyclerView>(R.id.recycler_view)
     recycler_view.layoutManager = layoutManager
     adapter = RecyclerAdapter()
     recycler_view.adapter = adapter
-
   }
 }

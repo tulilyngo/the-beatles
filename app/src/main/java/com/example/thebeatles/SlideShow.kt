@@ -1,9 +1,7 @@
 package com.example.thebeatles
 
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.*
 import android.content.*
-import android.os.HandlerThread
 import java.util.*
 
 class SlideShow : Thread {
@@ -16,7 +14,7 @@ class SlideShow : Thread {
   constructor(duration: Long, noSlides: Int) {
     this.duration = duration
     this.noSlides = noSlides
-    imageView = MainActivity.getInstance().findViewById(R.id.imageView)
+    imageView = MainActivity.getInstance().findViewById(R.id.cover)
     textView = MainActivity.getInstance().findViewById(R.id.textView)
   }
 
@@ -78,9 +76,9 @@ class HandlerThread : Runnable {
   }
 
   override fun run() {
-    var imageView = MainActivity.getInstance().findViewById<ImageView>(R.id.imageView)
+    var imageView = MainActivity.getInstance().findViewById<ImageView>(R.id.cover)
     var textView = MainActivity.getInstance().findViewById<TextView>(R.id.textView)
-    textView.setText(caption)
+    textView.text = caption
 
     var id = MainActivity.getInstance().resources.getIdentifier(
       fn,

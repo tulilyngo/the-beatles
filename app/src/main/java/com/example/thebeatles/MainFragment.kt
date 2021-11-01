@@ -34,7 +34,6 @@ class MainFragment : Fragment() {
     super.onViewCreated(view, savedInstanceState)
     instance = this
 
-    var slideShow = SlideShow(3, 16)
-    slideShow.start()
+    MainActivity.getInstance().supportActionBar?.title = "Home"
   }
 }

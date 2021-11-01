@@ -5,11 +5,11 @@
     android:id="@+id/cl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#231F2A"
+    android:background="#1A191E"
     tools:context=".MainFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/cover"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/divider"
