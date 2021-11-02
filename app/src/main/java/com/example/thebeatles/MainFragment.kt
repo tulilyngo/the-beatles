@@ -12,8 +12,7 @@ import android.widget.TextView
  * A simple [Fragment] subclass.
  */
 class MainFragment : Fragment() {
-  private var pic: ImageView? = null
-  private var title: TextView? = null
+  var slideShow = SlideShow(3)
 
   companion object {
     private var instance: MainFragment? = null
@@ -35,5 +34,8 @@ class MainFragment : Fragment() {
     instance = this
 
     MainActivity.getInstance().supportActionBar?.title = "Home"
+
+    slideShow.stopThread = false
+    slideShow.start()
   }
 }

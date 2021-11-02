@@ -12,11 +12,11 @@
         android:id="@+id/cover"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:src="@drawable/intro1"
         app:layout_constraintBottom_toBottomOf="@id/divider"
         app:layout_constraintEnd_toEndOf="@id/right"
         app:layout_constraintStart_toStartOf="@id/left"
-        app:layout_constraintTop_toTopOf="@id/top"
-        app:srcCompat="@drawable/abbeyroad" />
+        app:layout_constraintTop_toTopOf="@id/top" />
 
     <TextView
         android:id="@+id/textView"

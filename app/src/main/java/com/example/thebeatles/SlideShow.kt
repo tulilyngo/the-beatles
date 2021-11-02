@@ -1,21 +1,13 @@
 package com.example.thebeatles
 
 import android.widget.*
-import android.content.*
-import java.util.*
 
 class SlideShow : Thread {
-  private var noSlides = 0
   private var duration: Long = 0
-  private var count: Int = 1
-  private var imageView: ImageView? = null
-  private var textView: TextView? = null
+  var stopThread = false
 
-  constructor(duration: Long, noSlides: Int) {
+  constructor(duration: Long) {
     this.duration = duration
-    this.noSlides = noSlides
-    imageView = MainActivity.getInstance().findViewById(R.id.cover)
-    textView = MainActivity.getInstance().findViewById(R.id.textView)
   }
 
   override public fun run() {
@@ -56,10 +48,11 @@ class SlideShow : Thread {
       "With The Beatles",
       "Yellow Submarine"
     )
-    while (true) {
+    // Check if other fragment menu was clicked
+    while (!MainFragment.getInstance().slideShow.stopThread) {
+      Thread.sleep(duration * 1000) //Delay
       var handler = HandlerThread(files[count % files.size], captions[count % files.size])
       MainActivity.getInstance().runOnUiThread(handler)
-      Thread.sleep(duration * 1000) //Delay
       count++
     }
   }
@@ -76,15 +69,18 @@ class HandlerThread : Runnable {
   }
 
   override fun run() {
-    var imageView = MainActivity.getInstance().findViewById<ImageView>(R.id.cover)
-    var textView = MainActivity.getInstance().findViewById<TextView>(R.id.textView)
-    textView.text = caption
-
-    var id = MainActivity.getInstance().resources.getIdentifier(
-      fn,
-      "drawable",
-      MainActivity.getInstance().packageName
-    )
-    imageView.setImageResource(id)
+    if (!MainFragment.getInstance().slideShow.stopThread) {
+      var cover = MainFragment.getInstance().cover
+      var textView = MainActivity.getInstance().findViewById<TextView>(R.id.textView)
+      textView.text = caption
+      var id = MainActivity.getInstance().resources.getIdentifier(
+        fn,
+        "drawable",
+        MainActivity.getInstance().packageName
+      )
+      cover.setImageResource(id)
+    } else {
+      return
+    }
   }
 }
