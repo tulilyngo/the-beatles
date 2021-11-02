@@ -59,6 +59,12 @@ class SearchFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+
     MainActivity.getInstance().supportActionBar?.title = "Search"
+
+    // If navigate from Home, stop SlideShow
+    if (MainFragment.getInstance().slideShow.isAlive) {
+      MainFragment.getInstance().slideShow.stopThread = true
+    }
   }
 }

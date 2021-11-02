@@ -1,9 +1,13 @@
 package com.example.thebeatles
 
 import android.widget.*
+import android.content.*
+import java.util.*
+
 
 class SlideShow : Thread {
   private var duration: Long = 0
+
   var stopThread = false
 
   constructor(duration: Long) {
@@ -63,6 +67,7 @@ class HandlerThread : Runnable {
   private var fn: String = ""
   private var caption: String = ""
 
+
   constructor(fn: String, caption: String) {
     this.fn = fn
     this.caption = caption
@@ -70,15 +75,16 @@ class HandlerThread : Runnable {
 
   override fun run() {
     if (!MainFragment.getInstance().slideShow.stopThread) {
-      var cover = MainFragment.getInstance().cover
+      var imageView = MainActivity.getInstance().findViewById<ImageView>(R.id.cover)
       var textView = MainActivity.getInstance().findViewById<TextView>(R.id.textView)
-      textView.text = caption
+      textView.setText(caption)
+
       var id = MainActivity.getInstance().resources.getIdentifier(
         fn,
         "drawable",
         MainActivity.getInstance().packageName
       )
-      cover.setImageResource(id)
+      imageView.setImageResource(id)
     } else {
       return
     }

@@ -40,6 +40,11 @@ class AlbumFragment : Fragment() {
     super.onViewCreated(view, savedInstanceState)
     MainActivity.getInstance().supportActionBar?.title = "Album"
 
+    // If navigate from Home, stop SlideShow
+    if (MainFragment.getInstance().slideShow.isAlive) {
+      MainFragment.getInstance().slideShow.stopThread = true
+    }
+
     layoutManager = LinearLayoutManager(MainActivity.getInstance())
     var recycler_view = MainActivity.getInstance().findViewById<RecyclerView>(R.id.recycler_view)
     recycler_view.layoutManager = layoutManager

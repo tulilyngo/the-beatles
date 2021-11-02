@@ -42,7 +42,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     var itemDate: TextView
 
     init {
-      itemCover = itemView.findViewById(R.id.cover)
+      itemCover = itemView.findViewById(R.id.imageView)
       itemAlbum = itemView.findViewById(R.id.album)
       itemDate = itemView.findViewById(R.id.date)
 
