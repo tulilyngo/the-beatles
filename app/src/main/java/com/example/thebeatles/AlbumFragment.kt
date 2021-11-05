@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-
 class AlbumFragment : Fragment() {
   private var layoutManager: RecyclerView.LayoutManager? = null
   private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
@@ -21,7 +20,6 @@ class AlbumFragment : Fragment() {
       return instance!!
     }
   }
-
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)

@@ -11,6 +11,7 @@ import java.io.*
 
 class MainActivity : AppCompatActivity() {
   var albums = arrayListOf<Album>()
+  var stopThread = false  // To notify if the thread in webView needs to be stopped
 
   companion object {
     private var instance: MainActivity? = null

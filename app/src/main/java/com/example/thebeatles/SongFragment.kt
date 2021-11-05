@@ -12,6 +12,13 @@ class SongFragment : Fragment() {
   private var layoutManager: RecyclerView.LayoutManager? = null
   private var adapter: RecyclerView.Adapter<RecyclerAdapterSong.ViewHolder>? = null
 
+  companion object {
+    private var instance: SongFragment? = null
+    public fun getInstance(): SongFragment {
+      return instance!!
+    }
+  }
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
   }
@@ -37,5 +44,4 @@ class SongFragment : Fragment() {
     adapter = RecyclerAdapterSong(pos!!) //this is the desired album selected
     recycler_view2.adapter = adapter
   }
-
 }
