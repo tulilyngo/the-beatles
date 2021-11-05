@@ -1,13 +1,12 @@
 package com.example.thebeatles
 
 class Album {
-  private var album : String = ""
-  private var producer : String = ""
-  private var date : String = ""
-  private var file : String = ""
+  private var album: String = ""
+  private var producer: String = ""
+  private var date: String = ""
+  private var file: String = ""
 
-  constructor(album : String, producer : String, date : String, file : String)
-  {
+  constructor(album: String, producer: String, date: String, file: String) {
     this.album = album
     this.producer = producer
     this.date = date
@@ -46,4 +45,3 @@ class Album {
     return file
   }
 }
-
