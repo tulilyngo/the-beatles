@@ -119,8 +119,9 @@ class RecyclerAdapterSong : RecyclerView.Adapter<RecyclerAdapterSong.ViewHolder>
         val max = 50
 
         // Set the youtube search
+        // Include key for YouTube API calls at the end of url string
         val url =
-          "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$keywords&order=viewCount&maxResults=$max&type=video&videoCategory=Music&key=AIzaSyC8q2VhbVX4370rj_Bz6CQefflpBAchXDE"
+          "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$keywords&order=viewCount&maxResults=$max&type=video&videoCategory=Music&key=<xxxx>"
 
         var helper = Helper(url, origSong, origArtist)
         var thread = Thread(helper)
